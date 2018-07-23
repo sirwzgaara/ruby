@@ -1,19 +1,23 @@
 
-$global_variable = 10    #定义全局变量的方法
-
-class Class1
-	def print_global
-		puts "全局变量在Class1 中输出为#$global_variable"
+class Customer
+	@@no_of_numbers = 0
+	def initialize(id, name, addr)
+		@cust_id = id
+		@cust_name = name
+		@cust_addr = addr
+	end
+	def display_detials()
+		puts "Customer id #@cust_id"
+		puts "Customer nmae #@cust_name"
+		puts "Customer addr #@cust_addr"
+	end
+	def total_no_of_customers()
+		@@no_of_numbers += 1
+		puts "total num is #@@no_of_numbers"
 	end
 end
 
-class Class2
-	def print_global
-		puts "全局变量在Class2中输出为#$global_variable"
-	end
-end
-
-class1obj = Class1.new
-class1obj.print_global
-class2obj = Class2.new
-class2obj.print_global
+cust1 = Customer.new(1,2,3)
+cust2 = Customer.new(4,5,6)
+cust1.total_no_of_customers()
+cust2.total_no_of_customers()

@@ -1,7 +1,7 @@
 class Customer
 	@@no_of_customers = 0		#类变量
 	def initialize(id, name, addr)
-		@cust_id = id			#局部变量
+		@cust_id = id			#实例变量
 		@cust_name = name
 		@cust_addr = addr
 	end
